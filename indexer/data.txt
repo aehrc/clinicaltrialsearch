@@ -1,0 +1,13 @@
+{
+  "properties" : {
+    "arm_group_label" : {
+      "type" : "text"
+    },
+    "arm_group_type" : {
+      "type" : "text"
+    },
+    "description" : {
+      "type" : "text"
+    }
+  }
+}

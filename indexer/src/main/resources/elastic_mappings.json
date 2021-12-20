@@ -1,0 +1,1272 @@
+{
+	"settings": {
+	  "index" : {
+	    "number_of_shards" : 1,
+      "number_of_replicas" : 0,
+      "similarity" : {
+        "default" : {
+          "type" : "BM25",
+          "b": 0.5,
+          "k1": 0
+        }
+      }
+	  },
+      "analysis": {
+        "filter": {
+          "english_stop": {
+            "type":       "stop",
+            "stopwords":  "_english_"
+          },
+          "english_stemmer": {
+            "type":       "stemmer",
+            "language":   "english" 
+          },
+          "english_possessive_stemmer": {
+            "type":       "stemmer",
+            "language":   "possessive_english" 
+          }
+        },
+        "analyzer": {
+          "english": {
+            "tokenizer":  "standard",
+            "filter": [
+              "english_possessive_stemmer",
+              "lowercase",
+              "english_stop",
+              "english_stemmer"
+            ]
+          }
+        }
+      }
+    },
+    "mappings" : {
+      "trial" : {
+        "properties" : {
+          "clinical_study" : {
+            "properties" : {
+              "acronym" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "arm_group" : {
+                "properties" : {
+                  "arm_group_label" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "arm_group_type" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "description" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "biospec_descr" : {
+                "properties" : {
+                  "textblock" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "biospec_retention" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "brief_summary" : {
+                "properties" : {
+                  "Diagnosis" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Other" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Test" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Treatment" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "textblock" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "brief_title" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "completion_date" : {
+                "properties" : {
+                  "content" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "type" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "condition" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "condition_browse" : {
+                "properties" : {
+                  "mesh_term" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "detailed_description" : {
+                "properties" : {
+                  "Diagnosis" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Other" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Test" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Treatment" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "textblock" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "eligibility" : {
+                "properties" : {
+                  "Diagnosis" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Other" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Test" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Treatment" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "keyword",
+                        "store" : true,
+                        "index":"not_analyzed",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "store" : true,
+                            "index":"not_analyzed",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "store" : true,
+                        "index":"not_analyzed",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "criteria" : {
+                    "properties" : {
+                      "exclusion" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "inclusion" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "textblock" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  },
+                  "gender" : {
+                    "type" : "keyword",
+                    "store" : true, 
+                    "index":"not_analyzed"
+                  },
+                  "healthy_volunteers" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "maximum_age" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "minimum_age" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "sampling_method" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "study_pop" : {
+                    "properties" : {
+                      "textblock" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  }
+                }
+              },
+              "enrollment" : {
+                "properties" : {
+                  "content" : {
+                    "type" : "long"
+                  },
+                  "type" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "firstreceived_date" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "firstreceived_results_date" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "has_expanded_access" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "id_info" : {
+                "properties" : {
+                  "nct_alias" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "nct_id" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "org_study_id" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "secondary_id" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "intervention" : {
+                "properties" : {
+                  "arm_group_label" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "description" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "intervention_name" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "intervention_type" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "other_name" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "intervention_browse" : {
+                "properties" : {
+                  "mesh_term" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "is_fda_regulated" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "is_section_801" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "keyword" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "lastchanged_date" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "link" : {
+                "properties" : {
+                  "description" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "url" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "location" : {
+                "properties" : {
+                  "contact" : {
+                    "properties" : {
+                      "email" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "last_name" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "phone" : {
+                        "type" : "text",
+                        "store" : false,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "phone_ext" : {
+                        "type" : "text",
+                        "store" : false,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  },
+                  "contact_backup" : {
+                    "properties" : {
+                      "email" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "last_name" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "phone" : {
+                        "type" : "text",
+                        "store" : false,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "phone_ext" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  },
+                  "facility" : {
+                    "properties" : {
+                      "address" : {
+                        "properties" : {
+                          "city" : {
+                            "type" : "text",
+                            "store" : true,
+                            "term_vector" : "with_positions_offsets_payloads"
+                          },
+                          "country" : {
+                            "type" : "text",
+                            "store" : true,
+                            "term_vector" : "with_positions_offsets_payloads"
+                          },
+                          "state" : {
+                            "type" : "text",
+                            "store" : true,
+                            "term_vector" : "with_positions_offsets_payloads"
+                          },
+                          "zip" : {
+                            "type" : "text",
+                            "store" : true,
+                            "term_vector" : "with_positions_offsets_payloads"
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  },
+                  "investigator" : {
+                    "properties" : {
+                      "last_name" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "role" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  },
+                  "status" : {
+                    "type" : "keyword",
+                    "store" : true, 
+                    "index":"not_analyzed"
+                  }
+                }
+              },
+              "location_countries" : {
+                "properties" : {
+                  "country" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "number_of_arms" : {
+                "type" : "long"
+              },
+              "number_of_groups" : {
+                "type" : "long"
+              },
+              "official_title" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "other_outcome" : {
+                "properties" : {
+                  "description" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "measure" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "safety_issue" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "time_frame" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "overall_contact" : {
+                "properties" : {
+                  "email" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "last_name" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "phone" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "phone_ext" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "overall_contact_backup" : {
+                "properties" : {
+                  "email" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "last_name" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "phone" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "phone_ext" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "overall_official" : {
+                "properties" : {
+                  "affiliation" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "last_name" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "role" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "overall_status" : {
+                "type" : "keyword",
+                "store" : true, 
+                "index":"not_analyzed"
+              },
+              "oversight_info" : {
+                "properties" : {
+                  "authority" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "has_dmc" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "phase" : {
+                "type" : "text",
+                "store" : true,
+                "index":"not_analyzed",
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "primary_completion_date" : {
+                "properties" : {
+                  "content" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "type" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "primary_outcome" : {
+                "properties" : {
+                  "Diagnosis" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Other" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Test" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Treatment" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "description" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "measure" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "safety_issue" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "time_frame" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "rank" : {
+                "type" : "long"
+              },
+              "reference" : {
+                "properties" : {
+                  "PMID" : {
+                    "type" : "long"
+                  },
+                  "citation" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "removed_countries" : {
+                "properties" : {
+                  "country" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "required_header" : {
+                "properties" : {
+                  "download_date" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "link_text" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "url" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "responsible_party" : {
+                "properties" : {
+                  "investigator_affiliation" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "investigator_full_name" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "investigator_title" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "name_title" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "organization" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "responsible_party_type" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "results_reference" : {
+                "properties" : {
+                  "PMID" : {
+                    "type" : "long"
+                  },
+                  "citation" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "secondary_outcome" : {
+                "properties" : {
+                  "Diagnosis" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Other" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Test" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Treatment" : {
+                    "properties" : {
+                      "cui" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "text",
+ 				"term_vector": "with_positions_offsets_payloads",
+                        "fields" : {
+                          "keyword" : {
+                            "type" : "keyword",
+                            "ignore_above" : 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "description" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "measure" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "safety_issue" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  },
+                  "time_frame" : {
+                    "type" : "text",
+                    "store" : true,
+                    "term_vector" : "with_positions_offsets_payloads"
+                  }
+                }
+              },
+              "source" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "sponsors" : {
+                "properties" : {
+                  "collaborator" : {
+                    "properties" : {
+                      "agency" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "agency_class" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  },
+                  "lead_sponsor" : {
+                    "properties" : {
+                      "agency" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      },
+                      "agency_class" : {
+                        "type" : "text",
+                        "store" : true,
+                        "term_vector" : "with_positions_offsets_payloads"
+                      }
+                    }
+                  }
+                }
+              },
+              "start_date" : {
+                "type" : "text",
+                "store" : false
+              },
+              "study_design" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "study_type" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "target_duration" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "verification_date" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              },
+              "why_stopped" : {
+                "type" : "text",
+                "store" : true,
+                "term_vector" : "with_positions_offsets_payloads"
+              }
+            }
+          }
+        }
+      }
+    }   
+}

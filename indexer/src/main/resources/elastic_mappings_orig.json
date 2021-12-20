@@ -1,0 +1,523 @@
+{
+  "clinicaltrials" : {
+    "aliases" : { },
+    "mappings" : {
+      "trial" : {
+        "properties" : {
+          "clinical_study" : {
+            "properties" : {
+              "acronym" : {
+                "type" : "string"
+              },
+              "arm_group" : {
+                "properties" : {
+                  "arm_group_label" : {
+                    "type" : "string"
+                  },
+                  "arm_group_type" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "biospec_descr" : {
+                "properties" : {
+                  "textblock" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "biospec_retention" : {
+                "type" : "string"
+              },
+              "brief_summary" : {
+                "properties" : {
+                  "textblock" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "brief_title" : {
+                "type" : "string"
+              },
+              "completion_date" : {
+                "properties" : {
+                  "content" : {
+                    "type" : "string"
+                  },
+                  "type" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "condition" : {
+                "type" : "string"
+              },
+              "condition_browse" : {
+                "properties" : {
+                  "mesh_term" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "detailed_description" : {
+                "properties" : {
+                  "textblock" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "eligibility" : {
+                "properties" : {
+                  "criteria" : {
+                    "properties" : {
+                      "textblock" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "gender" : {
+                    "type" : "string"
+                  },
+                  "healthy_volunteers" : {
+                    "type" : "string"
+                  },
+                  "maximum_age" : {
+                    "type" : "long"
+                  },
+                  "minimum_age" : {
+                    "type" : "long"
+                  },
+                  "sampling_method" : {
+                    "type" : "string"
+                  },
+                  "study_pop" : {
+                    "properties" : {
+                      "textblock" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "enrollment" : {
+                "properties" : {
+                  "content" : {
+                    "type" : "long"
+                  },
+                  "type" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "firstreceived_date" : {
+                "type" : "string"
+              },
+              "firstreceived_results_date" : {
+                "type" : "string"
+              },
+              "has_expanded_access" : {
+                "type" : "string"
+              },
+              "id_info" : {
+                "properties" : {
+                  "nct_alias" : {
+                    "type" : "string"
+                  },
+                  "nct_id" : {
+                    "type" : "string"
+                  },
+                  "org_study_id" : {
+                    "type" : "string"
+                  },
+                  "secondary_id" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "intervention" : {
+                "properties" : {
+                  "arm_group_label" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "intervention_name" : {
+                    "type" : "string"
+                  },
+                  "intervention_type" : {
+                    "type" : "string"
+                  },
+                  "other_name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "intervention_browse" : {
+                "properties" : {
+                  "mesh_term" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "is_fda_regulated" : {
+                "type" : "string"
+              },
+              "is_section_801" : {
+                "type" : "string"
+              },
+              "keyword" : {
+                "type" : "string"
+              },
+              "lastchanged_date" : {
+                "type" : "string"
+              },
+              "link" : {
+                "properties" : {
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "url" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "location" : {
+                "properties" : {
+                  "contact" : {
+                    "properties" : {
+                      "email" : {
+                        "type" : "string"
+                      },
+                      "last_name" : {
+                        "type" : "string"
+                      },
+                      "phone" : {
+                        "type" : "string"
+                      },
+                      "phone_ext" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "contact_backup" : {
+                    "properties" : {
+                      "email" : {
+                        "type" : "string"
+                      },
+                      "last_name" : {
+                        "type" : "string"
+                      },
+                      "phone" : {
+                        "type" : "string"
+                      },
+                      "phone_ext" : {
+                        "type" : "long"
+                      }
+                    }
+                  },
+                  "facility" : {
+                    "properties" : {
+                      "address" : {
+                        "properties" : {
+                          "city" : {
+                            "type" : "string"
+                          },
+                          "country" : {
+                            "type" : "string"
+                          },
+                          "state" : {
+                            "type" : "string"
+                          },
+                          "zip" : {
+                            "type" : "string"
+                          }
+                        }
+                      },
+                      "name" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "investigator" : {
+                    "properties" : {
+                      "last_name" : {
+                        "type" : "string"
+                      },
+                      "role" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "status" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "location_countries" : {
+                "properties" : {
+                  "country" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "number_of_arms" : {
+                "type" : "long"
+              },
+              "number_of_groups" : {
+                "type" : "long"
+              },
+              "official_title" : {
+                "type" : "string"
+              },
+              "other_outcome" : {
+                "properties" : {
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "measure" : {
+                    "type" : "string"
+                  },
+                  "safety_issue" : {
+                    "type" : "string"
+                  },
+                  "time_frame" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "overall_contact" : {
+                "properties" : {
+                  "email" : {
+                    "type" : "string"
+                  },
+                  "last_name" : {
+                    "type" : "string"
+                  },
+                  "phone" : {
+                    "type" : "string"
+                  },
+                  "phone_ext" : {
+                    "type" : "long"
+                  }
+                }
+              },
+              "overall_contact_backup" : {
+                "properties" : {
+                  "email" : {
+                    "type" : "string"
+                  },
+                  "last_name" : {
+                    "type" : "string"
+                  },
+                  "phone" : {
+                    "type" : "string"
+                  },
+                  "phone_ext" : {
+                    "type" : "long"
+                  }
+                }
+              },
+              "overall_official" : {
+                "properties" : {
+                  "affiliation" : {
+                    "type" : "string"
+                  },
+                  "last_name" : {
+                    "type" : "string"
+                  },
+                  "role" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "overall_status" : {
+                "type" : "string"
+              },
+              "oversight_info" : {
+                "properties" : {
+                  "authority" : {
+                    "type" : "string"
+                  },
+                  "has_dmc" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "phase" : {
+                "type" : "string"
+              },
+              "primary_completion_date" : {
+                "properties" : {
+                  "content" : {
+                    "type" : "string"
+                  },
+                  "type" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "primary_outcome" : {
+                "properties" : {
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "measure" : {
+                    "type" : "string"
+                  },
+                  "safety_issue" : {
+                    "type" : "string"
+                  },
+                  "time_frame" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "rank" : {
+                "type" : "long"
+              },
+              "reference" : {
+                "properties" : {
+                  "PMID" : {
+                    "type" : "long"
+                  },
+                  "citation" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "removed_countries" : {
+                "properties" : {
+                  "country" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "required_header" : {
+                "properties" : {
+                  "download_date" : {
+                    "type" : "string"
+                  },
+                  "link_text" : {
+                    "type" : "string"
+                  },
+                  "url" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "responsible_party" : {
+                "properties" : {
+                  "investigator_affiliation" : {
+                    "type" : "string"
+                  },
+                  "investigator_full_name" : {
+                    "type" : "string"
+                  },
+                  "investigator_title" : {
+                    "type" : "string"
+                  },
+                  "name_title" : {
+                    "type" : "string"
+                  },
+                  "organization" : {
+                    "type" : "string"
+                  },
+                  "responsible_party_type" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "results_reference" : {
+                "properties" : {
+                  "PMID" : {
+                    "type" : "long"
+                  },
+                  "citation" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "secondary_outcome" : {
+                "properties" : {
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "measure" : {
+                    "type" : "string"
+                  },
+                  "safety_issue" : {
+                    "type" : "string"
+                  },
+                  "time_frame" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "source" : {
+                "type" : "string"
+              },
+              "sponsors" : {
+                "properties" : {
+                  "collaborator" : {
+                    "properties" : {
+                      "agency" : {
+                        "type" : "string"
+                      },
+                      "agency_class" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "lead_sponsor" : {
+                    "properties" : {
+                      "agency" : {
+                        "type" : "string"
+                      },
+                      "agency_class" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "start_date" : {
+                "type" : "string"
+              },
+              "study_design" : {
+                "type" : "string"
+              },
+              "study_type" : {
+                "type" : "string"
+              },
+              "target_duration" : {
+                "type" : "string"
+              },
+              "verification_date" : {
+                "type" : "string"
+              },
+              "why_stopped" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "settings" : {
+      "index" : {
+        "creation_date" : "1467175844336",
+        "number_of_shards" : "5",
+        "number_of_replicas" : "1",
+        "uuid" : "JFwZtnb9Tk-6-DWTrUWzPA",
+        "version" : {
+          "created" : "2030199"
+        }
+      }
+    },
+    "warmers" : { }
+  }
+}
