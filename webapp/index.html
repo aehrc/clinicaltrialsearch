@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="searchApp">
+	<head>
+		<title>Clinicial Trials Search</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/angular-chart.css" />
+		<!-- Custom styles for this template -->
+		<link href="custom.css" rel="stylesheet">
+
+	</head>
+	<body >
+
+
+
+		 <!-- Begin page content -->
+		<div class="container" ng-controller='SearchController as searchCtrl'>
+
+			<search-form></search-form>
+
+			<div class="alert alert-danger" role="alert" ng-show="searchCtrl.errors.length > 0">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				Error: Unable to search the Clinical Trials store. ({{ searchCtrl.errors }})
+			</div>
+
+			<search-results></search-results>
+
+		</div> <!-- container -->
+
+		<footer class="footer">
+			<div class="container text-center">
+				Developed by <a href="http://aehrc.com">Australian e-Health Research Centre</a>, <a href="http://csiro.au">CSIRO</a>.
+				<img src="img/csiro.png"> <img src="img/aehrc_logo.png" > 
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="config.js"></script>		
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script src="js/ng-infinite-scroll.min.js"></script>
+		<script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
+		<script type="text/javascript" src="js/Chart.js"></script>
+		<script type="text/javascript" src="js/angular-chart.js"></script>
+
+		<script type="text/javascript" src="js/querybuilder.js"></script>
+		<script type="text/javascript" src="js/logger.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		
+	</body>
+</html>

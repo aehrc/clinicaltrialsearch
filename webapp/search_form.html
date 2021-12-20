@@ -1,0 +1,40 @@
+<!-- the heading and search input box -->
+<div class="starter-template">
+	<h1>Clinicial Trials Search</h1>
+	<p class="lead"  ng-controller="MetadataController as metadataCtrl">
+		Free text search of {{ metadataCtrl.collectionSize | number}} clinical trials.<br>
+
+		<!-- By default the report text section will be searched.<br> -->
+		<!-- Use the dropdown options to select other specific fields. -->
+	</p>
+
+	<div class="row">		
+		<form class="navbar-form navbar-center" role="search"  ng-submit='searchCtrl.doSearch(searchCtrl.queryTerms, "", 0, 100)'>
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search" style="width:600px;" id="search_terms" ng-model='searchCtrl.queryTerms' focus="true">
+				<span class="input-group-btn">  
+					<div class="btn-group">
+						<button type="submit" class="btn btn-primary" id="search_button">Search</button> 
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#" data-toggle="modal" data-target="#helpModal">Search Help</a></li>
+						</ul>
+					</div>
+		    </span>
+		    
+			</div> <!-- input-group -->
+			<p ng-show="searchCtrl.results.hits.total" class="totalResults">{{ searchCtrl.results.hits.total }} results in {{ searchCtrl.results.took }}ms.</p>
+			<p ng-show="searchCtrl.results.hits.total == 0 && searchCtrl.queryTerms != ''" class="totalResults">No results for '{{ searchCtrl.queryTerms }}'.</p>
+
+			<!-- <p ng-model="searchCtrl.query"> {{ searchCtrl.query | json }}</p> -->
+		</form>
+
+	</div> <!-- row -->
+
+</div> <!-- starter-template -->
+
+
+<help></help>

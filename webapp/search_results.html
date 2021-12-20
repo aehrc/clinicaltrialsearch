@@ -1,0 +1,84 @@
+<script type="text/ng-template" id="myModalContent.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Patient {{ patient._source.clinical_study.brief_title }}</h3>
+	</div>
+	<div class="modal-body">
+		<table class="table borderless patient">
+			<tbody>
+				<tr class="patient'+key+'" ng-repeat="(patientField, patientValue) in patient._source.clinical_study"> 
+					<td class="patientKey patient{{ patientField }}Key">{{ patientField }}</td>
+					<td class="patientValue patient{{ patientField }}Value">{{ patientValue }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="cancel()">Close</button>
+	</div>
+</script>
+
+
+<div class="row" infinite-scroll="paginateResults()" infinite-scroll-distance="0" infinite-scroll-disabled="!searchCtrl.results.hits.total || true" infinite-scroll-immediate-check="false">
+	<hr ng-show="searchCtrl.results.hits.total">
+	<!-- <a id="download" href="#">Download all results as CSV</a> -->
+	<div class="col-lg-9"  ng-show="searchCtrl.results.hits.total" >
+		<div id="resultsTable" ng-controller="PatientDetailsCtrl as patientDetailsCtrl">
+			<div id="resultsRows" ng-repeat="patient in searchCtrl.results.hits.hits">
+				<button type="button" class="btn btn-link trialTitle"  ng-click="open(patient, searchCtrl.queryTerms)" ng-hide="patient.highlight['clinical_study.brief_title']">
+					{{  patient._source.clinical_study.brief_title }}
+				</button>
+
+				<button type="button" class="btn btn-link trialTitle"  ng-click="open(patient, searchCtrl.queryTerms)" ng-bind-html="patient.highlight['clinical_study.brief_title'][0] | sanitize" ng-show="patient.highlight['clinical_study.brief_title']"></button>				
+			
+				<p class="trialId"><a href="https://clinicaltrials.gov/ct2/show/{{ patient._source.clinical_study.id_info.nct_id }}">{{ patient._source.clinical_study.id_info.nct_id }}</a></p>
+				<p class="trialDesc">{{ patient._source.clinical_study.brief_summary.textblock }}</p>
+				<div ng-repeat="(snippetField, snippetValue) in patient.highlight">
+					<p>{{ snippetField }} <span class="trialSnippet" ng-bind-html="snippetValue[0]| sanitize " ></span></p>
+					
+				</div>
+				
+			</div>
+		</div> 
+	</div>
+
+	
+
+	<div class="col-lg-3 charts" ng-class="{'vis': searchCtrl.results.hits.total > 0, 'novis': !searchCtrl.results.hits.total}">	 
+		<div id="chart_modality">
+			<h3>Modality</h3>
+			<canvas class="chart chart-bar" data="modalitychart.data" labels="modalitychart.labels" colours = "modalitychart.colours" click="modalityFilter" options="{scaleShowHorizontalLines: false, scaleShowVerticalLines: false, responsive: true}"></canvas>
+		</div>	 
+		<div id="chart_age">
+			<h3>Age</h3>
+			<canvas class="chart chart-bar" data="agechart.data" labels="agechart.labels" colours="agechart.colours" click="ageFilter" options="{scaleShowHorizontalLines: false, scaleShowVerticalLines: false, responsive: true}"></canvas>
+		</div>
+		<div id="chart_gender">
+			<h3>Patient sex</h3>
+			<canvas class="chart chart-pie" data="genderchart.data[0]" labels="genderchart.labels" legend="true" click="sexFilter" options="{scaleShowHorizontalLines: false, scaleShowVerticalLines: false, responsive: true}"></canvas>
+		</div>
+		<div id="chart_author">
+			<h3>Author</h3>
+			<canvas class="chart chart-bar" data="authorchart.data" labels="authorchart.labels" colours = "authorchart.colours" click="authorFilter" options="{scaleShowHorizontalLines: false, scaleShowVerticalLines: false, responsive: true}"></canvas>
+		</div>
+	</div>
+
+	<!-- <div class="col-sm-12 resultsPagination">
+		<div class="result pull-left">Page 1 of 5</div>
+		<ul class="pagination pull-right">
+			<li><a id="pageback" href="#">«</a></li>
+			<li><a id="page1" href="#">1</a></li>
+			<li><a id="page2" href="#">2</a></li>
+			<li><a id="page3" href="#">3</a></li>
+			<li><a id="page4" href="#">4</a></li>
+			<li><a id="page5" href="#">5</a></li>
+			<li><a id="pagenext" href="#">»</a></li>
+		</ul>			 
+	</div> -->
+
+	
+</div> <!-- row -->
+
+
+
+	
+	

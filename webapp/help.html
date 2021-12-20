@@ -1,0 +1,44 @@
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+	<div class="modal-dialog	modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h3 class="modal-title" id="patientDetailsModalLabel">Help</h3>
+			</div>
+			<div class="modal-body">
+				<table class="table borderless">
+					<tbody>
+						<tr>
+							<th>Feature</th>
+							<th>Operator</th>
+							<th>Example</th>
+						</tr>
+						<tr>
+							<td>Extract phrase match</td>
+							<td>"keywords"</td>
+							<td class="queryText">"heart attack"</td>
+						</tr>
+						<tr>
+							<td>Exclusions</td>
+							<td>-keywords</td>
+							<td class="queryText">breast cancer -metastatic</td>
+						</tr>
+						<tr>
+							<td>Search specific field</td>
+							<td>field:keywords</td>
+							<td class="queryText">AUTHOR:Edwards</td>
+						</tr>
+						<tr>
+							<td colspan="3">Summary plots can be click on to further filter results.</td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

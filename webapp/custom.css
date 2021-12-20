@@ -1,0 +1,122 @@
+body {
+  padding-top: 50px;
+  text-align: left;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.snippet {
+	font-weight: 600;
+}
+
+
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+.totalResults {
+  font-size: small;
+  margin: 20px;
+}
+
+tbody > tr {
+    cursor: pointer;
+}
+
+.charts h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.patientKey {
+	font-weight: 600;
+}
+
+.patientREPORT_TEXTValue {
+	font-family: monospace;
+    white-space: pre-wrap;
+
+    display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.42857143;
+	color: #333;
+	word-break: break-all;
+	word-wrap: break-word;
+	
+	border-radius: 4px;
+}
+
+.patientREPORT_TEXTValue span {
+	background-color: black;
+	color: white;
+}
+
+.borderless tbody tr td, .borderless thead tr th {
+    border: none;
+    padding: 3px 10px;
+}
+
+.modality-RA { color: red; }
+.modality-CT { color: blue; }
+.modality-MR { color: green; }
+.modality-US { color: gray; }
+.modality-MO { color: lightblue; }
+
+#resultsTable {
+  height: 100%;
+}
+
+.queryText {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.vis {
+  visibility: visible;
+}
+
+.novis {
+  visibility: hidden;
+}
+
+.trialTitle {
+  text-align:left; 
+  padding-left:0px;
+  font-size: large;
+}
+
+.trialId {
+  color: #006621;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+	padding-top: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 80px;
+  background-color: #f5f5f5;
+}
+
+.footer img {
+  height: 45px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+}

@@ -1,0 +1,32 @@
+<!-- Patient Modal -->
+ <script type="text/ng-template" id="myModalContentXX.html">
+	<div class="modal fade" id="patientDetailsModal" tabindex="-1" role="dialog" aria-labelledby="patientDetailsModalLabel" aria-hidden="true">
+		<div class="modal-dialog	modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h3 class="modal-title" id="patientDetailsModalLabel">Patient</h3>
+				</div>
+				<div class="modal-body">
+					<table class="table borderless patient">
+						<tbody>
+							The paient is {{ patient }}
+							The ACCESSION_NUMBER is {{ patient._source.ACCESSION_NUMBER }}.
+							<tr class="patient'+key+'" ng-repeat="patientField in patient._source"> 
+								<td class="patientKey patient'+key+'Key">{{ patientField }}</td>
+								<td class="patientValue patient'+key+'Value">patientField</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel('Cancel')">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- End Modal-->
+
+
+
