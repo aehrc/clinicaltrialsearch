@@ -1,3 +1,25 @@
+# Project specific ignores
+
+*.res
+target
+.classpath
+.project
+.settings
+json_out*
+out
+.vscode/
+__pycache__/
+.mypy_cache/
+results/
+topics-2014_2015-description.topics.res
+plexa-elastic-index/
+NCT*.xml*
+clinicaltrials.gov-13_mar_2020
+.idea/
+clinicaltrialssearch.iml
+.DS_Store
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +149,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
