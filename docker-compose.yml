@@ -3,30 +3,23 @@ version: '3'
 services:
 
   plexa-clinicaltrials-matcher:
-    image: docker-registry.it.csiro.au/health-text-analytics/clinicaltrials-matcher:0.0.4
-    ports: 
-      - 8888:80
+    image: aehrc/clinicaltrials-matcher:0.1.1-2020CT
+    ports:
+      - 8080:80
     links:
       - plexa-elasticsearch
       - plexa-quickumls-rest
 
   plexa-elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.0.2
+    image: aehrc/clinicaltrials-elasticsearch:5.0.2-2020
     #command: elasticsearch -Enetwork.host=0.0.0.0 -Epath.repo=/usr/share/elasticsearch
-    ports:
-      - 9200:9200
-      - 9300:9300
     environment:
       - xpack.security.enabled=false
       - TZ=Australia/Brisbane
-      - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
-    volumes:
-      - ./plexa-elastic-index:/usr/share/elasticsearch/data
+      - "ES_JAVA_OPTS=-Xms6g -Xmx6g"
+    ports:
+      - 9200:9200
+      - 9300:9300
 
   plexa-quickumls-rest:
     image: aehrc/quickumls-rest:1.2.3-2018AA
-    ports:
-      - 5000:5000
-
-volumes:
-  plexa-elastic-index:

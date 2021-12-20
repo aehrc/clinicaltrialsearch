@@ -133,3 +133,27 @@ The `matcher` is a standalone component that can be dockerised by running the fo
 $ docker build -t docker-registry.it.csiro.au/health-text-analytics/clinicaltrials-matcher:0.0.2 .
 ```
 Replace `0.0.2` with correct version number.
+
+## API Documentation
+
+The REST API is accessed by submitting an HTTP POST to
+
+```json
+http://host:port/
+with JSON:
+{
+  "query" :  "you text here",
+  "num_results": 10,
+  "recruiting_only": false,
+  "country": "your country here - blank for all",
+  <any_field>: <value>
+}
+```
+					
+Optional arguments include:
+- `num_results`: number of results to return (default: 10).
+- `recruiting_only`: return only trials with status as recruiting (default: false).
+- `country`: return only trials with in the specified country (default: show all countries).
+
+In addition, you can filter by any field and value but specifying it as a param in the request. Ensure that the field matches extactly as that shown in the response; e.g., `"responsible_party.organization": "responsible_party"` where the `organization` field is nested within the `responsible_party` field.
+Some sample patient records are also provided by HTTP GET to `/patient` or `/patient/<patient_id>`.
