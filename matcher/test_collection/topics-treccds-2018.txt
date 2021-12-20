@@ -1,0 +1,202 @@
+<queries>
+<query>
+<number>20181</number>
+<text>melanoma. BRAF (V600E). 64-year-old male</text>
+</query>
+<query>
+<number>20182</number>
+<text>melanoma. BRAF (V600K). 54-year-old male</text>
+</query>
+<query>
+<number>20183</number>
+<text>melanoma. BRAF (V600R). 80-year-old male</text>
+</query>
+<query>
+<number>20184</number>
+<text>melanoma. BRAF (K601E). 38-year-old male</text>
+</query>
+<query>
+<number>20185</number>
+<text>melanoma. BRAF (V600E), PTEN loss of function. 57-year-old male</text>
+</query>
+<query>
+<number>20186</number>
+<text>melanoma. BRAF (V600E), NRAS (Q61R). 67-year-old male</text>
+</query>
+<query>
+<number>20187</number>
+<text>melanoma. BRAF amplification. 61-year-old male</text>
+</query>
+<query>
+<number>20188</number>
+<text>melanoma. NRAS (Q61R). 63-year-old female</text>
+</query>
+<query>
+<number>20189</number>
+<text>melanoma. NRAS (Q61L). 34-year-old female</text>
+</query>
+<query>
+<number>201810</number>
+<text>melanoma. KIT (L576P). 65-year-old female</text>
+</query>
+<query>
+<number>201811</number>
+<text>melanoma. KIT (L576P), KIT amplification. 56-year-old female</text>
+</query>
+<query>
+<number>201812</number>
+<text>melanoma. KIT (K642E). 62-year-old female</text>
+</query>
+<query>
+<number>201813</number>
+<text>melanoma. KIT (N822Y). 39-year-old female</text>
+</query>
+<query>
+<number>201814</number>
+<text>melanoma. KIT amplification. 66-year-old female</text>
+</query>
+<query>
+<number>201815</number>
+<text>melanoma. NF1 truncation. 70-year-old male</text>
+</query>
+<query>
+<number>201816</number>
+<text>melanoma. NTRK1 rearrangement. 60-year-old male</text>
+</query>
+<query>
+<number>201817</number>
+<text>melanoma. TP53 loss of function. 72-year-old male</text>
+</query>
+<query>
+<number>201818</number>
+<text>melanoma. tumor cells with >50% membranous PD-L1 expression. 48-year-old female</text>
+</query>
+<query>
+<number>201819</number>
+<text>melanoma. tumor cells negative for PD-L1 expression. 73-year-old male</text>
+</query>
+<query>
+<number>201820</number>
+<text>melanoma. high tumor mutational burden. 86-year-old female</text>
+</query>
+<query>
+<number>201821</number>
+<text>melanoma. extensive tumor infiltrating lymphocytes. 49-year-old male</text>
+</query>
+<query>
+<number>201822</number>
+<text>melanoma. no tumor infiltrating lymphocytes. 74-year-old female</text>
+</query>
+<query>
+<number>201823</number>
+<text>melanoma. PTEN loss of function. 68-year-old male</text>
+</query>
+<query>
+<number>201824</number>
+<text>melanoma. APC loss of function. 47-year-old male</text>
+</query>
+<query>
+<number>201825</number>
+<text>melanoma. high serum LDH levels. 69-year-old female</text>
+</query>
+<query>
+<number>201826</number>
+<text>colorectal cancer. NRAS. 49-year-old male</text>
+</query>
+<query>
+<number>201827</number>
+<text>medullary thyroid carcinoma. RET. 45-year-old female</text>
+</query>
+<query>
+<number>201828</number>
+<text>neuroblastoma. ALK. 4-year-old female</text>
+</query>
+<query>
+<number>201829</number>
+<text>esophageal cancer. EGFR. 67-year-old male</text>
+</query>
+<query>
+<number>201830</number>
+<text>lung cancer. ROS1. 71-year-old female</text>
+</query>
+<query>
+<number>201831</number>
+<text>head and neck squamous cell carcinoma. CDKN2A. 64-year-old male</text>
+</query>
+<query>
+<number>201832</number>
+<text>leukemia. ABL1. 4-year-old female</text>
+</query>
+<query>
+<number>201833</number>
+<text>gastric cancer. EGFR. 60-year-old female</text>
+</query>
+<query>
+<number>201834</number>
+<text>sarcoma. MDM2. 78-year-old female</text>
+</query>
+<query>
+<number>201835</number>
+<text>breast cancer. CDKN2A. 73-year-old female</text>
+</query>
+<query>
+<number>201836</number>
+<text>lung cancer. ERBB2. 49-year-old female</text>
+</query>
+<query>
+<number>201837</number>
+<text>non-small cell carcinoma. MET. 68-year-old male</text>
+</query>
+<query>
+<number>201838</number>
+<text>cholangiocarcinoma. IDH1. 50-year-old male</text>
+</query>
+<query>
+<number>201839</number>
+<text>anaplastic large cell lymphoma. ALK. 18-year-old male</text>
+</query>
+<query>
+<number>201840</number>
+<text>breast cancer. ERBB2. 56-year-old female</text>
+</query>
+<query>
+<number>201841</number>
+<text>papillary thyroid carcinoma. NTRK1. 46-year-old female</text>
+</query>
+<query>
+<number>201842</number>
+<text>glioblastoma. CDK6. 84-year-old male</text>
+</query>
+<query>
+<number>201843</number>
+<text>basal cell carcinoma. PTCH1. 56-year-old female</text>
+</query>
+<query>
+<number>201844</number>
+<text>glioma. BRAF. 82-year-old male</text>
+</query>
+<query>
+<number>201845</number>
+<text>thyroid cancer. BRAF. 40-year-old female</text>
+</query>
+<query>
+<number>201846</number>
+<text>lung cancer. FGFR1. 57-year-old male</text>
+</query>
+<query>
+<number>201847</number>
+<text>prostate cancer. PTEN. 70-year-old male</text>
+</query>
+<query>
+<number>201848</number>
+<text>adenoid cystic carcinoma. KIT. 58-year-old female</text>
+</query>
+<query>
+<number>201849</number>
+<text>acute myeloid leukemia. IDH1. 1-year-old male</text>
+</query>
+<query>
+<number>201850</number>
+<text>acute myeloid leukemia. FLT3. 13-year-old male</text>
+</query>
+</queries>

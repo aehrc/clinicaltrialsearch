@@ -1,0 +1,122 @@
+<queries>
+<query>
+<number>20171</number>
+<text>Liposarcoma. CDK4 Amplification. 38-year-old male. GERD</text>
+</query>
+<query>
+<number>20172</number>
+<text>Colon cancer. KRAS (G13D), BRAF (V600E). 52-year-old male. Type II Diabetes, Hypertension</text>
+</query>
+<query>
+<number>20173</number>
+<text>Meningioma. NF2 (K322), AKT1(E17K). 45-year-old female</text>
+</query>
+<query>
+<number>20174</number>
+<text>Breast cancer. FGFR1 Amplification, PTEN (Q171). 67-year-old female. Depression, Hypertension, Heart Disease</text>
+</query>
+<query>
+<number>20175</number>
+<text>Melanoma. BRAF (V600E), CDKN2A Deletion. 45-year-old female</text>
+</query>
+<query>
+<number>20176</number>
+<text>Melanoma. NRAS (Q61K). 55-year-old male. Hypertension</text>
+</query>
+<query>
+<number>20177</number>
+<text>Lung cancer. EGFR (L858R). 50-year-old female. Lupus</text>
+</query>
+<query>
+<number>20178</number>
+<text>Lung cancer. EML4-ALK Fusion transcript. 52-year-old male. Hypertension, Osteoarthritis</text>
+</query>
+<query>
+<number>20179</number>
+<text>Gastrointestinal stromal tumor. KIT Exon 9 (A502_Y503dup). 49-year-old female</text>
+</query>
+<query>
+<number>201710</number>
+<text>Lung adenocarcinoma. KRAS (G12C). 61-year-old female. Hypertension, Hypercholesterolemia</text>
+</query>
+<query>
+<number>201711</number>
+<text>Gastric cancer. PIK3CA (E545K). 54-year-old male. Depression</text>
+</query>
+<query>
+<number>201712</number>
+<text>Colon cancer. BRAF (V600E). 35-year-old male</text>
+</query>
+<query>
+<number>201713</number>
+<text>Cholangiocarcinoma. BRCA2. 72-year-old male. Diabetes</text>
+</query>
+<query>
+<number>201714</number>
+<text>Cholangiocarcinoma. IDH1 (R132H). 64-year-old male. Neuropathy</text>
+</query>
+<query>
+<number>201715</number>
+<text>Cervical cancer. STK11. 26-year-old female</text>
+</query>
+<query>
+<number>201716</number>
+<text>Pancreatic cancer. CDKN2A. 54-year-old male. Diabetes, Hypertension</text>
+</query>
+<query>
+<number>201717</number>
+<text>Prostate cancer. PTEN Inactivating. 81-year-old male. Hypertension, Depression</text>
+</query>
+<query>
+<number>201718</number>
+<text>Pancreatic cancer. CDK6 Amplification. 48-year-old male</text>
+</query>
+<query>
+<number>201719</number>
+<text>Colorectal cancer. FGFR1 Amplification. 35-year-old female</text>
+</query>
+<query>
+<number>201720</number>
+<text>Liposarcoma. MDM2 Amplification. 26-year-old male</text>
+</query>
+<query>
+<number>201721</number>
+<text>Lung adenocarcinoma. ALK Fusion. 64-year-old female. Emphysema</text>
+</query>
+<query>
+<number>201722</number>
+<text>Lung cancer. ERBB2 Amplification. 70-year-old male. Arthritis</text>
+</query>
+<query>
+<number>201723</number>
+<text>Breast cancer. PTEN Loss. 54-year-old female. Congestive Heart Failure</text>
+</query>
+<query>
+<number>201724</number>
+<text>Lung cancer. NTRK1. 58-year-old female. Depression, Hypertension, Diabetes</text>
+</query>
+<query>
+<number>201725</number>
+<text>Lung adenocarcinoma. MET Amplification. 48-year-old male. Emphysema</text>
+</query>
+<query>
+<number>201726</number>
+<text>Breast cancer. NRAS Amplification. 35-year-old female</text>
+</query>
+<query>
+<number>201727</number>
+<text>Pancreatic adenocarcinoma. KRAS, TP53. 49-year-old female</text>
+</query>
+<query>
+<number>201728</number>
+<text>Pancreatic ductal adenocarcinoma. ERBB3. 73-year-old female. Whipple, FNA</text>
+</query>
+<query>
+<number>201729</number>
+<text>Ampullary carcinoma. KRAS. 61-year-old male</text>
+</query>
+<query>
+<number>201730</number>
+<text>Pancreatic adenocarcinoma. RB1, TP53, KRAS. 57-year-old female</text>
+</query>
+</queries>

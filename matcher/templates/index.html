@@ -1,0 +1,181 @@
+<html>
+<head>
+	<title>Clinical Trial Patient Matching</title>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+	<script language="JavaScript">
+        function Search() {
+			document.getElementById('resultstable').style.display = "block";
+            patienttext = document.getElementById('patienttext').value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                 if (this.readyState == 4 && this.status == 200) {
+                    var json = JSON.parse(this.responseText);
+					var full_results = "";
+					for (var i = 0; i < json.length; i++){
+						full_results += "<tr><td>" +  json[i]['rank'] + '</td>\n';
+						full_results += "<td><a href=\"https://clinicaltrials.gov/ct2/show/"+ json[i]['doc'] + "\">" + json[i]['title'] +'</a></td>\n';
+						full_results += "<td>"+ json[i]['score'] + '</td></tr>\n';
+					}
+					document.getElementById('clinicaltrial').innerHTML = full_results;
+					
+                 }
+            };
+            xhttp.open("POST", "/", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            var data = JSON.stringify({"query": patienttext});
+            xhttp.send(data);
+        }
+    </script>
+
+	<style>
+
+		body {
+			color: #777;
+		}
+
+		.pure-img-responsive {
+			max-width: 100%;
+			height: auto;
+		}
+
+        #patienttext {
+            width: 100%;
+        }
+
+		/*
+		This is the parent `<div>` that contains the menu and the content area.
+		*/
+		#layout {
+			position: relative;
+			left: 0;
+			padding-left: 0;
+		}
+			#layout.active #menu {
+				left: 150px;
+				width: 150px;
+			}
+
+			#layout.active .menu-link {
+				left: 150px;
+			}
+		/*
+		The content `<div>` is where all your content goes.
+		*/
+		.content {
+			margin: 0 auto;
+			padding: 0 2em;
+			max-width: 800px;
+			margin-bottom: 50px;
+			line-height: 1.6em;
+		}
+
+		.header {
+			 margin: 0;
+			 color: #333;
+			 text-align: center;
+			 padding: 2.5em 2em 0;
+			 border-bottom: 1px solid #eee;
+		 }
+			.header h1 {
+				margin: 0.2em 0;
+				font-size: 3em;
+				font-weight: 300;
+			}
+			 .header h2 {
+				font-weight: 300;
+				color: #ccc;
+				padding: 0;
+				margin-top: 0;
+			}
+
+		.content-subhead {
+			margin: 50px 0 20px 0;
+			font-weight: 300;
+			color: #888;
+		}
+	</style>
+ 
+</head>
+<body>
+
+	<div id="main">
+			<div class="header">
+				<h1>Clinical Trial Patient Matching</h1>
+				<h2>Example test service webapp.</h2>
+			</div>
+	
+			<div class="content">
+				<h2 class="content-subhead">About</h2>
+				<p>
+					This service takes a patient record as a query and returns related clinical trials.
+				</p>
+	
+				<h2 class="content-subhead">Model Id</h2>
+				<p>
+					This service is using model: <strong>{{version}}</strong>.
+				</p>
+				<p>
+					Elastic service: {{es_service}}; QuickUMLS service: {{q_service}}.
+				</p>
+	
+				<h2 class="content-subhead">The REST API</h2>
+				<p>
+					The REST API is accessed by submitting an HTTP POST to <pre>http://host:port/</pre> with JSON:
+					<pre>
+{
+  "query" :  "you text here",
+  "num_results": 10,
+  "recruiting_only": false,
+  "country": "your country here - blank for all",
+  &lt;any_field&gt;: &lt;value&gt;
+}
+					</pre>Optional arguments include:
+					<ul>
+						<li><code>num_results</code>: number of results to return (default: 10).</li>
+						<li><code>recruiting_only</code>: return only trials with status as recruiting (default: false).</li>
+						<li><code>country</code>: return only trials with in the specified country (default: show all countries).</li>
+						<li>In addition, you can filter by any field and value but specifying it as a param in the request. 
+							Ensure that the field matches extactly as that shown in the response; 
+							e.g., <code>"responsible_party.organization": "responsible_party"</code> where the <code>organization</code> 
+							field is nested within the <code>responsible_party</code> field.
+						</li>
+					</ul>
+				</p>
+
+				<p>
+					Some sample patient records are also provided by <code>HTTP GET</code> to <code><a href="/patient">/patient</a></code> or <code><a href="/patient/20148">/patient/&lt;patient_id&gt;</a></code>.
+				</p>
+
+			
+				<h2 class="content-subhead">Test Service</h2>
+				<p>
+					This small webapp can used to submit to the above mentioned API:
+					<form class="pure-form">
+						<fieldset class="pure-group">
+							<textarea class="pure-input-1-2" id='patienttext' cols="50" rows="4" placeholder="Enter a query..."></textarea>
+						</fieldset>
+					</form>
+					<button class="pure-button pure-input-1-2 pure-button-primary" onclick="Search();">Search</button>
+				</p>
+				
+
+				<table class="pure-table pure-table-horizontal" style="display: none" id="resultstable">
+					<thead>
+						<tr>
+							<th>Rank</th>
+							<th>Trial</th>
+							<th>Score</th>
+						</tr>
+					</thead>
+				
+					<tbody id="clinicaltrial">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+ 
+</body>
+</html>
