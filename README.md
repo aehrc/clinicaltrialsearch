@@ -5,7 +5,13 @@
 
 A search engine for retrieving clinical trials.
 
+The project has three components:
 
+`indexer`: Java application that takes XML documents downloaded from ClinicalTrials.gov and indexes them into Elasticsearch
+
+`matcher`: Python based ranker that uses the Elasticsearch index, including query formulation using UMLS concepts
+
+`webapp`: Python Flask REST service that calls `matcher`
 
 ## Setup
 
